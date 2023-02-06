@@ -1,23 +1,46 @@
 {
-  "name": "with-turbopack",
+  "name": "reactify-next",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "clean": "rm -rf node_modules/ && rm -rf yarn.lock && yarn"
   },
   "dependencies": {
     "@next/font": "13.1.6",
-    "@types/node": "18.11.18",
-    "@types/react": "18.0.27",
-    "@types/react-dom": "18.0.10",
-    "eslint": "8.33.0",
-    "eslint-config-next": "13.1.6",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@headlessui/react": "^1.7.9",
+    "@react-hook/window-size": "^3.1.1",
+    "@redlotus/ui": "^0.1.58",
+    "@supabase/supabase-js": "^2.7.0",
+    "@tanstack/react-query": "^4.24.4",
+    "clsx": "^1.2.1",
+    "date-fns": "^2.29.3",
+    "formik": "^2.2.9",
+    "framer-motion": "^9.0.1",
     "next": "13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "4.9.5"
+    "react-hot-toast": "^2.4.0",
+    "react-icons": "4.7.1",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@redlotus/tsconfig": "^1.0.2",
+    "@types/node": "18.11.18",
+    "@types/react": "18.0.27",
+    "@types/react-dom": "18.0.10",
+    "autoprefixer": "^10.4.13",
+    "c8": "^7.12.0",
+    "eslint-config-redlotus-next": "0.1.0",
+    "jsdom": "^21.1.0",
+    "typescript": "4.9.5",
+    "postcss": "^8.4.21",
+    "tailwind-scrollbar": "^2.1.0",
+    "tailwind-scrollbar-hide": "^1.1.7"
   }
 }
