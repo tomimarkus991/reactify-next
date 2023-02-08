@@ -4,11 +4,9 @@ const withPWA = require("next-pwa")({
 });
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = withPWA({
   reactStrictMode: true,
   experimental: {
     appDir: true,
   },
-};
-
-module.exports = withPWA(...nextConfig);
+});
