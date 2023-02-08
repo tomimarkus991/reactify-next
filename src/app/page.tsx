@@ -5,8 +5,10 @@ export default function Page() {
   return (
     <main>
       <p>Page content</p>
+      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+
       <Link href="about">
-        <p>Go to About page</p>
+        <p className="text-red-500 text-xl">Go to About page</p>
       </Link>
       <Image src="/favicon.svg" alt="Logo" width={100} height={24} priority />
     </main>
