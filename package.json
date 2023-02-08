@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "clean": "rm -rf node_modules/ && rm -rf yarn.lock && yarn"
+    "clean": "rm -rf node_modules/ && rm -rf yarn.lock && yarn",
+    "lint:fix": "eslint --fix --ext .js,.ts,.tsx ./src --ignore-path .gitignore"
   },
   "dependencies": {
     "@next/font": "13.1.6",

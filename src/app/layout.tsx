@@ -1,5 +1,3 @@
-import "./globals.css";
-
 interface Props {
   children: React.ReactNode;
 }
