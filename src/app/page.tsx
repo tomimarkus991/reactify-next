@@ -8,7 +8,7 @@ export default function Page() {
       <Link href="about">
         <p>Go to About page</p>
       </Link>
-      <Image src="/vercel.svg" alt="Vercel Logo" width={100} height={24} priority />
+      <Image src="/favicon.svg" alt="Logo" width={100} height={24} priority />
     </main>
   );
 }
