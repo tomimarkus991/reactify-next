@@ -1,0 +1,9 @@
+/build
+/coverage
+/node_modules
+/*.json
+/*.yaml
+/*env*
+/.*
+/public
+/dist
