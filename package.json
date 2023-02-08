@@ -7,14 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "clean": "rm -rf node_modules/ && rm -rf yarn.lock && yarn",
-    "lint:fix": "eslint --fix --ext .js,.ts,.tsx ./src --ignore-path .gitignore"
+    "clean": "rm -rf node_modules/ && rm -rf yarn.lock && yarn"
   },
   "dependencies": {
-    "@next/font": "13.1.6",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@headlessui/react": "^1.7.9",
+    "@next/font": "13.1.6",
     "@react-hook/window-size": "^3.1.1",
     "@redlotus/ui": "^0.1.58",
     "@supabase/supabase-js": "^2.7.0",
@@ -38,10 +37,15 @@
     "autoprefixer": "^10.4.13",
     "c8": "^7.12.0",
     "eslint-config-redlotus-next": "0.1.0",
+    "husky": "^8.0.3",
     "jsdom": "^21.1.0",
-    "typescript": "4.9.5",
+    "lint-staged": "^13.1.1",
     "postcss": "^8.4.21",
     "tailwind-scrollbar": "^2.1.0",
-    "tailwind-scrollbar-hide": "^1.1.7"
+    "tailwind-scrollbar-hide": "^1.1.7",
+    "typescript": "4.9.5"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,md,graphql}": "yarn lint"
   }
 }
