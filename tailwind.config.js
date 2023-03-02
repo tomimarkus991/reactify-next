@@ -6,9 +6,16 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}", "./node_modules/@redlotus/ui/dist/style.css"],
-  // darkMode: "class",
+  darkMode: "class",
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    container: {
+      center: true,
+      padding: "1.5rem",
+      screens: {
+        "2xl": "1360px",
+      },
+    },
     screens: {
       minscreen: "340px",
       xs: "460px",
@@ -17,10 +24,8 @@ module.exports = {
     },
     extend: {
       boxShadow: {
-        // red:"0px 4px 12px 0 rgba(229, 8, 21, 0.6)",
         red: "0px 4px 12px 0 rgba(174, 9, 9, 0.3)",
         orange: "0px 4px 12px 0 rgba(229, 141, 8, 0.3)",
-        // orange:"0px 20px 20px -12px rgba(229, 141, 8, 0.3)",
       },
       fontSize: {
         xs2: "0.6rem",
@@ -51,14 +56,27 @@ module.exports = {
         "spin-backwards": {
           to: { transform: "rotate(-360deg)" },
         },
+        "accordion-down": {
+          from: { height: 0 },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: 0 },
+        },
       },
     },
-    fontFamily: {
-      varela: ["Varela Round", "sans-serif"],
-      sans: ["Rubik", "sans-serif"],
-      baloo: ["baloo-2", "cursive"],
-      quicksand: ["Quicksand", "sans-serif"],
-      catamaran: ["Catamaran", "sans-serif"],
+    // fontFamily: {
+    //   sans: ["Rubik", "sans-serif"],
+    //   sans: ["var(--font-rubik)", ...fontFamily.sans],
+    //   varela: ["Varela Round", "sans-serif"],
+    //   baloo: ["baloo-2", "cursive"],
+    //   quicksand: ["Quicksand", "sans-serif"],
+    //   catamaran: ["Catamaran", "sans-serif"],
+    // },
+    animation: {
+      "accordion-down": "accordion-down 0.2s ease-out",
+      "accordion-up": "accordion-up 0.2s ease-out",
     },
     linearBorderGradients: () => ({
       colors: {

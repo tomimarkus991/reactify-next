@@ -3,6 +3,15 @@
 
 Get started with React and tailwind. **Get a super boost to your development** 🚀
 
+Inspired by https://github.com/shadcn/next-template
+
+## Features
+
+- Radix UI Primitives
+- Tailwind CSS
+- Icons from [Lucide](https://lucide.dev)
+- Fonts with `@next/font`
+
 ## 📖 Documentation
 This boilerplate has all the tooling configured (eslint, prettier, husky, lint-staged, typescript and testing)
 
@@ -132,6 +141,18 @@ Remove from src folder:
 
 `yarn add three @react-three/fiber @react-three/drei`
 `yarn add -D r3f-perf @react-three/editor @types/three`
+
+### Class Merging
+
+The `cn` util handles conditional classes and class merging.
+
+### Input
+
+```ts
+cn("px-2 bg-slate-100 py-2 bg-slate-200")
+// Outputs `p-2 bg-slate-200`
+```
+
 
 ---
 

@@ -1,12 +1,14 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const withPWA = require("next-pwa")({
-  dest: "public",
-});
-
 /** @type {import('next').NextConfig} */
-module.exports = withPWA({
+module.exports = {
   reactStrictMode: true,
   experimental: {
     appDir: true,
+    typedRoutes: true,
+    fontLoaders: [
+      {
+        loader: "@next/font/google",
+        options: { subsets: ["latin"] },
+      },
+    ],
   },
-});
+};
