@@ -1,19 +1,18 @@
-import { animations, AnimationWrapper } from "@redlotus/ui";
-import { HiChartBar, HiHome } from "react-icons/hi";
-import { Link } from "react-router-dom";
+import { BarChart, Home } from "lucide-react";
+import Link from "next/link";
 
 export const NavbarBottomContent = () => {
   return (
     <>
-      <Link to="/">
-        <AnimationWrapper variants={animations.smallScale} key="nb-home-icon">
-          <HiHome className="h-14 w-14 cursor-pointer fill-slate-700 hover:fill-slate-800" />
-        </AnimationWrapper>
+      <Link href="/">
+        {/* <AnimationWrapper variants={animations.smallScale} key="nb-home-icon"> */}
+        <Home className="cursor-pointer h-14 w-14 fill-slate-700 hover:fill-slate-800" />
+        {/* </AnimationWrapper> */}
       </Link>
-      <Link to="/stats">
-        <AnimationWrapper variants={animations.smallScale} key="nb-chart-icon">
-          <HiChartBar className="h-14 w-14 cursor-pointer fill-slate-700 hover:fill-slate-800" />
-        </AnimationWrapper>
+      <Link href="/stats">
+        {/* <AnimationWrapper variants={animations.smallScale} key="nb-chart-icon"> */}
+        <BarChart className="cursor-pointer h-14 w-14 fill-slate-700 hover:fill-slate-800" />
+        {/* </AnimationWrapper> */}
       </Link>
     </>
   );

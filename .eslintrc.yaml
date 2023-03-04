@@ -1,4 +1,16 @@
+plugins:
+  - prettier
 extends:
   - eslint-config-redlotus-next/dist/main
-rules:
-  react/function-component-definition: off
+  - plugin:prettier/recommended
+rules: 
+  prettier/prettier:
+    - error
+    - semi: true
+    - tabWidth: 2
+    - singleQuote: false
+    - trailingComma: es5
+    - arrowParens: avoid
+    - printWidth: 100
+    - endOfLine: auto
+    - usePrettierrc: false
