@@ -1,5 +1,4 @@
 import { VariantProps, cva } from "class-variance-authority";
-import clsx from "clsx";
 import { forwardRef } from "react";
 
 import { cn } from "@/lib/utils";
@@ -76,29 +75,23 @@ const buttonVariants = cva(
         lg: `py-3 px-18 text-lg rounded-2xl`,
         oneLetter: `py-3 px-5 text-md rounded-lg uppercase max-w-fit`,
       },
+      focus: {
+        true: `focus:outline-[3.5px] focus:outline focus:-translate-y-[0.2rem]`,
+      },
     },
     defaultVariants: { variant: "default" },
   }
 );
 
-// export type RealButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-//   children: string | React.ReactNode;
-//   variant?: keyof typeof realButtonVariants;
-//   size?: keyof typeof realButtonSizes;
-//   focus?: boolean;
-// };
-
 export interface RealButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  focus?: boolean;
-}
+    VariantProps<typeof buttonVariants> {}
 
 export const RealButton = forwardRef<HTMLButtonElement, RealButtonProps>(
   ({ className, variant, size, focus, ...props }, ref) => {
     return (
       <button
-        className={cn(buttonVariants({ variant, size, className }))}
+        className={cn(buttonVariants({ variant, size, className, focus }))}
         ref={ref}
         {...props}
       />
