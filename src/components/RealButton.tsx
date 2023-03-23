@@ -73,7 +73,7 @@ const buttonVariants = cva(
         sm: `py-2 px-10 text-sm rounded-2xl`,
         md: `py-2 px-14 text-md rounded-2xl`,
         lg: `py-3 px-18 text-lg rounded-2xl`,
-        oneLetter: `py-3 px-5 text-md rounded-lg uppercase max-w-fit`,
+        oneLetter: `py-3 px-5 text-md rounded-lg uppercase max-w-fit font-semibold`,
       },
       focus: {
         true: `focus:outline-[3.5px] focus:outline focus:-translate-y-[0.2rem]`,
@@ -100,22 +100,3 @@ export const RealButton = forwardRef<HTMLButtonElement, RealButtonProps>(
 );
 
 RealButton.displayName = "RealButton";
-
-// export const RealButton = ({
-//   type = "button",
-//   className = "",
-//   variant = "dark",
-//   size = "md",
-//   children,
-//   focus = false,
-//   ...props
-// }: RealButtonProps) => {
-//   return (
-//     <button type={type} className={clsx()} {...props}>
-//       {children}
-//     </button>
-//   );
-// };
-// focus
-//   ? "focus:outline-[3.5px] focus:outline focus:-translate-y-[0.2rem]"
-//   : "",
