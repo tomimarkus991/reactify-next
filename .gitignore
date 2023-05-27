@@ -11,6 +11,7 @@
 # next.js
 /.next/
 /out/
+.swc
 
 # production
 /build
@@ -35,3 +36,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# next-pwa
+**/public/workbox**
+**/public/sw**
+**/public/worker**
+**/public/fallback**
+**/public/precache**

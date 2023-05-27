@@ -8,9 +8,53 @@ import { NextLayoutProps } from "@/types";
 
 import { AppWrapper } from "./AppWrapper";
 
+const APP_NAME = "Reactify Next";
+const APP_DEFAULT_TITLE = "Reactify Next";
+const APP_TITLE_TEMPLATE = "%s - Reactify Next";
+const APP_DESCRIPTION = "This is the best next template";
+
 export const metadata: Metadata = {
-  title: "Karateklubi Nüke",
-  description: "Tere tulemast nüke kodulehele!",
+  applicationName: APP_NAME,
+  title: {
+    default: APP_DEFAULT_TITLE,
+    template: APP_TITLE_TEMPLATE,
+  },
+  description: APP_DESCRIPTION,
+  themeColor: "#FFFFFF",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: APP_DEFAULT_TITLE,
+  },
+  icons: {
+    shortcut: "/favicon.ico",
+  },
+
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+  },
+  formatDetection: {
+    telephone: false,
+  },
+  // openGraph: {
+  //   type: "website",
+  //   siteName: APP_NAME,
+  //   title: {
+  //     default: APP_DEFAULT_TITLE,
+  //     template: APP_TITLE_TEMPLATE,
+  //   },
+  //   description: APP_DESCRIPTION,
+  // },
+  // twitter: {
+  //   card: "summary",
+  //   title: {
+  //     default: APP_DEFAULT_TITLE,
+  //     template: APP_TITLE_TEMPLATE,
+  //   },
+  //   description: APP_DESCRIPTION,
+  // },
 };
 
 const catamaran = Catamaran({
@@ -33,7 +77,10 @@ export default async function RootLayout({ children }: NextLayoutProps) {
       lang="et"
       suppressHydrationWarning
     >
-      <head />
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </head>
 
       <body
         className={cn(
