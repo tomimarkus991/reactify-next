@@ -109,12 +109,9 @@ module.exports = {
       },
     },
     fontFamily: {
-      sans: "var(--rubik-font)",
-      //   sans: ["var(--font-rubik)", ...fontFamily.sans],
+      rubik: "var(--rubik-font)",
       number: "var(--quicksand-font)",
-      //   baloo: ["baloo-2", "cursive"],
-      //   quicksand: ["Quicksand", "sans-serif"],
-      catamaran: "var(--main-font)",
+      catamaran: "var(--catamaran-font)",
     },
     animation: {
       "accordion-down": "accordion-down 0.2s ease-out",
