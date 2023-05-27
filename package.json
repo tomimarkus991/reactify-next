@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "clean": "rm -rf node_modules/ && rm -rf yarn.lock && yarn",
+    "typecheck": "tsc --noEmit",
+    "lint:fix": "eslint --fix --ext .js,.ts,.tsx ./src --ignore-path .gitignore",
     "sitemap": "next-sitemap"
   },
   "dependencies": {

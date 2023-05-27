@@ -1,4 +1,4 @@
-import { NavItem } from "@/types/nav";
+import { NavItem } from "@/types";
 
 interface SiteConfig {
   name: string;
@@ -13,8 +13,7 @@ interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   name: "Next.js",
-  description:
-    "Beautifully designed components built with Radix UI and Tailwind CSS.",
+  description: "Beautifully designed components built with Radix UI and Tailwind CSS.",
   mainNav: [
     {
       title: "Home",

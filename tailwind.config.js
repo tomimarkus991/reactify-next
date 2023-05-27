@@ -31,21 +31,25 @@ module.exports = {
     },
     screens: {
       minscreen: "340px",
+      xs3: "420px",
       xs: "460px",
       xs2: "500px",
+      sm2: "700px",
       ...defaultTheme.screens,
     },
     extend: {
       boxShadow: {
         red: "0px 4px 12px 0 rgba(174, 9, 9, 0.3)",
         orange: "0px 4px 12px 0 rgba(229, 141, 8, 0.3)",
+        top: "20px 35px 60px -15px rgba(0, 0, 0, 0.3)",
+        notLeft: "3px 3px 5px -4px rgba(0, 0, 0, 0.3)",
       },
       fontSize: {
         xs2: "0.6rem",
       },
       colors: {
         textGray: "#292929",
-        "text-primary": "#393939",
+        textPrimary: "#393939",
         textWhite: "#f3f2f0",
         casualRed: "#FF695A",
         casualOrange: "#FFA033",
@@ -81,10 +85,14 @@ module.exports = {
       },
       animation: {
         "spin-slow": "spin-backwards 40s linear infinite",
+        spinner: "spin-forwards 1s linear infinite",
       },
       keyframes: {
         "spin-backwards": {
           to: { transform: "rotate(-360deg)" },
+        },
+        "spin-forwards": {
+          to: { transform: "rotate(360deg)" },
         },
         "accordion-down": {
           from: { height: 0 },
@@ -94,19 +102,24 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
+        "animate-spin": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
       },
     },
-    // fontFamily: {
-    //   sans: ["Rubik", "sans-serif"],
-    //   sans: ["var(--font-rubik)", ...fontFamily.sans],
-    //   varela: ["Varela Round", "sans-serif"],
-    //   baloo: ["baloo-2", "cursive"],
-    //   quicksand: ["Quicksand", "sans-serif"],
-    //   catamaran: ["Catamaran", "sans-serif"],
-    // },
+    fontFamily: {
+      sans: "var(--rubik-font)",
+      //   sans: ["var(--font-rubik)", ...fontFamily.sans],
+      number: "var(--quicksand-font)",
+      //   baloo: ["baloo-2", "cursive"],
+      //   quicksand: ["Quicksand", "sans-serif"],
+      catamaran: "var(--main-font)",
+    },
     animation: {
       "accordion-down": "accordion-down 0.2s ease-out",
       "accordion-up": "accordion-up 0.2s ease-out",
+      spin: "animate-spin 1s linear infinite",
     },
     linearBorderGradients: () => ({
       colors: {
