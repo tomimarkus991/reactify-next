@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import { Catamaran, Quicksand, Rubik } from "next/font/google";
 
 import { cn } from "@/lib";
+import { Layout } from "@/three/components/Layout";
 import { NextLayoutProps } from "@/types";
 
 import { AppWrapper } from "./AppWrapper";
@@ -38,23 +39,6 @@ export const metadata: Metadata = {
   formatDetection: {
     telephone: false,
   },
-  // openGraph: {
-  //   type: "website",
-  //   siteName: APP_NAME,
-  //   title: {
-  //     default: APP_DEFAULT_TITLE,
-  //     template: APP_TITLE_TEMPLATE,
-  //   },
-  //   description: APP_DESCRIPTION,
-  // },
-  // twitter: {
-  //   card: "summary",
-  //   title: {
-  //     default: APP_DEFAULT_TITLE,
-  //     template: APP_TITLE_TEMPLATE,
-  //   },
-  //   description: APP_DESCRIPTION,
-  // },
 };
 
 const catamaran = Catamaran({
@@ -90,11 +74,13 @@ export default async function RootLayout({ children }: NextLayoutProps) {
           quicksand.variable
         )}
       >
-        <AppWrapper>
-          <div className="flex flex-col justify-between min-h-screen">
-            <div className="px-4 pt-36 sm2:pt-8">{children}</div>
-          </div>
-        </AppWrapper>
+        <Layout>
+          <AppWrapper>
+            <div className="flex flex-col justify-between min-h-screen">
+              <div className="px-4 pt-36 sm2:pt-8">{children}</div>
+            </div>
+          </AppWrapper>
+        </Layout>
       </body>
     </html>
   );

@@ -3,7 +3,7 @@ name: CI
 on: [push, pull_request]
 
 env:
-  NEXT_PUBLIC_ANY: "https://fake.com"
+  ANALYZE: true
 
 jobs:
   build:
@@ -26,4 +26,4 @@ jobs:
         run: yarn lint
 
       - name: Print Environment Variable
-        run: echo $NEXT_PUBLIC_ANY
+        run: echo $ANALYZE
