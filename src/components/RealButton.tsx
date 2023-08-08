@@ -80,7 +80,7 @@ const buttonVariants = cva(
       },
     },
     defaultVariants: { variant: "default" },
-  }
+  },
 );
 
 export interface RealButtonProps
@@ -88,15 +88,13 @@ export interface RealButtonProps
     VariantProps<typeof buttonVariants> {}
 
 export const RealButton = forwardRef<HTMLButtonElement, RealButtonProps>(
-  ({ className, variant, size, focus, ...props }, ref) => {
-    return (
-      <button
-        className={cn(buttonVariants({ variant, size, className, focus }))}
-        ref={ref}
-        {...props}
-      />
-    );
-  }
+  ({ className, variant, size, focus, ...props }, ref) => (
+    <button
+      className={cn(buttonVariants({ variant, size, className, focus }))}
+      ref={ref}
+      {...props}
+    />
+  ),
 );
 
 RealButton.displayName = "RealButton";
