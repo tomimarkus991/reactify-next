@@ -12,11 +12,9 @@ interface Props {
 }
 setDefaultOptions({ locale: et });
 
-export const AppWrapper = ({ children }: Props) => {
-  return (
-    <QueryClientProvider client={queryClient}>
-      {children}
-      <Toaster />
-    </QueryClientProvider>
-  );
-};
+export const AppWrapper = ({ children }: Props) => (
+  <QueryClientProvider client={queryClient}>
+    {children}
+    <Toaster />
+  </QueryClientProvider>
+);

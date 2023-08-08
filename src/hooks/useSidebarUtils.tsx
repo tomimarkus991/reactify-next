@@ -24,6 +24,7 @@ export const useSidebarUtils = () => {
     };
     window.addEventListener("click", closeSidebar);
     return () => window.removeEventListener("click", closeSidebar);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sidebarState]);
 };
 
