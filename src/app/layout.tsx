@@ -71,7 +71,7 @@ export default async function RootLayout({ children }: NextLayoutProps) {
           "min-h-screen bg-surface-bg font-catamaran antialiased flex flex-col",
           catamaran.variable,
           rubik.variable,
-          quicksand.variable
+          quicksand.variable,
         )}
       >
         <Layout>

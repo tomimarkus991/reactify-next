@@ -8,8 +8,8 @@ import { useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 
 interface BlobProps {
-  route: any;
-  props: MeshProps;
+  route?: any;
+  props?: MeshProps;
 }
 
 export const Blob = ({ route = "/", ...props }: BlobProps) => {
@@ -40,7 +40,7 @@ export const Logo = ({ route = "/blob", ...props }: any) => {
   const [hovered, hover] = useState(false);
   const points = useMemo(
     () => new THREE.EllipseCurve(0, 0, 3, 1.15, 0, 2 * Math.PI, false, 0).getPoints(100),
-    []
+    [],
   );
 
   useCursor(hovered);
