@@ -7,26 +7,23 @@ import { cn } from "@/lib";
 import { Layout } from "@/three/components/Layout";
 import { NextLayoutProps } from "@/types";
 
+import { siteConfig } from "../config";
+
 import { AppWrapper } from "./AppWrapper";
 
-const APP_NAME = "Reactify Next";
-const APP_DEFAULT_TITLE = "Reactify Next";
-const APP_TITLE_TEMPLATE = "%s - Reactify Next";
-const APP_DESCRIPTION = "This is the best next template";
-
 export const metadata: Metadata = {
-  applicationName: APP_NAME,
+  applicationName: siteConfig.name,
   title: {
-    default: APP_DEFAULT_TITLE,
-    template: APP_TITLE_TEMPLATE,
+    default: siteConfig.name,
+    template: siteConfig.template,
   },
-  description: APP_DESCRIPTION,
+  description: siteConfig.description,
   themeColor: "#FFFFFF",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: APP_DEFAULT_TITLE,
+    title: siteConfig.name,
   },
   icons: {
     shortcut: "/favicon.ico",

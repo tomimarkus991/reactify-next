@@ -3,6 +3,8 @@ import { NavItem } from "@/types";
 interface SiteConfig {
   name: string;
   description: string;
+  template: string;
+  baseUrl: string;
   mainNav: NavItem[];
   links: {
     twitter: string;
@@ -12,8 +14,10 @@ interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  name: "Next.js",
+  name: "Next js boilerplate",
   description: "Beautifully designed components built with Radix UI and Tailwind CSS.",
+  template: "%s - Reactify Next",
+  baseUrl: "https://",
   mainNav: [
     {
       title: "Home",

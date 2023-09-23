@@ -11,8 +11,10 @@ const withPWA = require("@ducanh2912/next-pwa").default({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    appDir: true,
     typedRoutes: true,
+    outputFileTracingExcludes: {
+      canvas: "**canvas**",
+    },
   },
   typescript: {
     ignoreBuildErrors: true,
@@ -36,6 +38,25 @@ const nextConfig = {
             outputPath: `${isServer ? "../" : ""}static/images/`,
             name: "[name]-[hash].[ext]",
             esModule: config.esModule || false,
+          },
+        },
+      ],
+    });
+
+    config.externals.push({
+      sharp: "commonjs sharp",
+      canvas: "commonjs canvas",
+    });
+
+    config.module.rules.unshift({
+      test: /pdf\.worker\.(min\.)?js/,
+      use: [
+        {
+          loader: "file-loader",
+          options: {
+            name: "[contenthash].[ext]",
+            publicPath: "_next/static/worker",
+            outputPath: "static/worker",
           },
         },
       ],
