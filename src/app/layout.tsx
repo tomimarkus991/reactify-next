@@ -1,6 +1,6 @@
 import "@/index.css";
 
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 import { Catamaran, Quicksand, Rubik } from "next/font/google";
 
 import { cn } from "@/lib";
@@ -11,6 +11,12 @@ import { siteConfig } from "../config";
 
 import { AppWrapper } from "./AppWrapper";
 
+export const viewport: Viewport = {
+  themeColor: "#FFFFF",
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
   applicationName: siteConfig.name,
   title: {
@@ -18,7 +24,6 @@ export const metadata: Metadata = {
     template: siteConfig.template,
   },
   description: siteConfig.description,
-  themeColor: "#FFFFFF",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
@@ -27,11 +32,6 @@ export const metadata: Metadata = {
   },
   icons: {
     shortcut: "/favicon.ico",
-  },
-
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
   },
   formatDetection: {
     telephone: false,
@@ -59,7 +59,6 @@ export default async function RootLayout({ children }: NextLayoutProps) {
       suppressHydrationWarning
     >
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </head>
 
